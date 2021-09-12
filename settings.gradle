@@ -1,0 +1,7 @@
+include ':data'
+include ':source:local'
+include ':source:remote'
+include ':common'
+include ':domain:sample-domain'
+include ':app:sample-app'
+rootProject.name = "DaebakTemplate"
