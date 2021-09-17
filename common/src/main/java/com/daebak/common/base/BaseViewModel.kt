@@ -8,21 +8,21 @@ import kotlinx.coroutines.launch
 
 abstract class BaseViewModel: ViewModel() {
     // base Event 고정 코드 vv
-    private val _baseEvent = MutableSharedFlow<BaseEvent>()
-    val baseEvent = _baseEvent.asSharedFlow()
+    private val _baseState = MutableSharedFlow<BaseState>()
+    val baseState = _baseState.asSharedFlow()
 
-    private fun baseEventCall(event: BaseEvent) {
+    private fun baseEventCall(state: BaseState) {
         viewModelScope.launch {
-            _baseEvent.emit(event)
+            _baseState.emit(state)
         }
     }
     // base Event 고정 코드 ^^
 
-    sealed class BaseEvent {
-        data class Toast(val string: String): BaseEvent()
+    sealed class BaseState {
+        data class Toast(val string: String): BaseState()
     }
 
     protected fun toast(message: String) {
-        baseEventCall(BaseEvent.Toast(message))
+        baseEventCall(BaseState.Toast(message))
     }
 }
