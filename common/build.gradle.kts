@@ -1,7 +1,7 @@
 plugins {
     id(Configs.LIBRARY)
     id(Configs.KOTLIN_ANDROID)
-    id(Configs.KOTLIN_ANDROID_EXTENSIONS)
+    id(Configs.KOTLIN_PARCELIZE)
     id(Configs.KOTLIN_KAPT)
 }
 

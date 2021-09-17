@@ -4,7 +4,7 @@ object Configs {
     const val LIBRARY                   = "com.android.library"
     const val KOTLIN                    = "kotlin"
     const val KOTLIN_ANDROID            = "kotlin-android"
-    const val KOTLIN_ANDROID_EXTENSIONS = "kotlin-android-extensions"
+    const val KOTLIN_PARCELIZE          = "kotlin-parcelize"
     const val KOTLIN_KAPT               = "kotlin-kapt"
     const val HILT_ANDROID_PLUGIN       = "dagger.hilt.android.plugin"
 
