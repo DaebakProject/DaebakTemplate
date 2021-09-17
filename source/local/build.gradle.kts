@@ -51,6 +51,7 @@ dependencies {
 
     //Network
     implementation(Dependencies.ROOM)
-    implementation(Dependencies.ROOM_ANNOTATION)
+    implementation(Dependencies.ROOM_KTS)
+    annotationProcessor(Dependencies.ROOM_ANNOTATION)
     kapt(Dependencies.ROOM_KAPT)
 }

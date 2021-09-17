@@ -46,6 +46,7 @@ object Dependencies {
     const val ROOM                      = "androidx.room:room-runtime:${Versions.ROOM}"
     const val ROOM_ANNOTATION           = "androidx.room:room-compiler:${Versions.ROOM}"
     const val ROOM_KAPT                 = "androidx.room:room-compiler:${Versions.ROOM}"
+    const val ROOM_KTS                  = "androidx.room:room-ktx:${Versions.ROOM}"
 
     //Glide
     const val GLIDE                     = "com.github.bumptech.glide:glide:${Versions.GLIDE}"

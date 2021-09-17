@@ -9,24 +9,19 @@ android {
     compileSdkVersion(Configs.COMPILE_SDK)
     buildToolsVersion(Configs.BUILD_TOOLS)
 
+//    configurations {
+//        all {
+//            exclude(group = "org.jetbrains", module = "annotations")
+//        }
+//    }
+
+
     defaultConfig {
         applicationId = Configs.APPLICATION_ID
         minSdkVersion(Configs.MIN_SDK)
         targetSdkVersion(Configs.TARGET_SDK)
         versionCode = Configs.VERSION_CODE
         versionName = Configs.VERSION_NAME
-    }
-
-    buildTypes {
-        getByName(Configs.RELEASE) {
-            isMinifyEnabled = true
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-
-        getByName(Configs.DEBUG) {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
     }
 
     compileOptions {
