@@ -8,14 +8,7 @@ plugins {
 android {
     compileSdkVersion(Configs.COMPILE_SDK)
     buildToolsVersion(Configs.BUILD_TOOLS)
-
-//    configurations {
-//        all {
-//            exclude(group = "org.jetbrains", module = "annotations")
-//        }
-//    }
-
-
+    
     defaultConfig {
         applicationId = Configs.APPLICATION_ID
         minSdkVersion(Configs.MIN_SDK)
