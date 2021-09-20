@@ -23,7 +23,7 @@ object Versions {
     const val ROOM                  ="2.3.0"
 
     //Coroutines
-    const val COROUTINES            = "1.3.9"
+    const val COROUTINES            = "1.5.2"
 
 
     //Lifecycle Component

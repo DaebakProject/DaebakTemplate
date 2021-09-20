@@ -65,4 +65,5 @@ dependencies {
 
     //Coroutines
     implementation(Dependencies.COROUTINES)
+    implementation(Dependencies.COROUTINES_CORE)
 }
