@@ -9,4 +9,7 @@ dependencies {
     implementation(Dependencies.KOTLIN_STD)
     //Dependency Injection
     implementation(Dependencies.INJECT)
+    //Coroutines
+    implementation(Dependencies.COROUTINES)
+    implementation(Dependencies.COROUTINES_CORE)
 }

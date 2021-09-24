@@ -19,6 +19,7 @@ object Dependencies {
 
     //Coroutines
     const val COROUTINES                = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
+    const val COROUTINES_CORE           = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINES}"
 
     //Lifecycle Component
     const val LIFECYCLE_VIEWMODEL       = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFECYCLE}"
