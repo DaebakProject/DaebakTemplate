@@ -14,6 +14,35 @@ android {
         getByName(Configs.RELEASE) {
             isMinifyEnabled = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            debuggable(false)
+        }
+
+        getByName(Configs.DEBUG) {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+    }
+
+    flavorDimensions(Configs.FLAVOR)
+
+    productFlavors {
+        create(Configs.DEV) {
+            dimension(Configs.FLAVOR)
+
+            buildConfigField("boolean", "DEV", true.toString())
+            buildConfigField("boolean", "STG", false.toString())
+        }
+        create(Configs.STG) {
+            dimension(Configs.FLAVOR)
+
+            buildConfigField("boolean", "DEV", false.toString())
+            buildConfigField("boolean", "STG", true.toString())
+        }
+        create(Configs.PROD) {
+            dimension(Configs.FLAVOR)
+
+            buildConfigField("boolean", "DEV", false.toString())
+            buildConfigField("boolean", "STG", false.toString())
         }
     }
 

@@ -22,4 +22,10 @@ object Configs {
     //BuildType
     const val RELEASE                   = "release"
     const val DEBUG                     = "debug"
+
+    //Build Flavor
+    const val FLAVOR                    = "flavor"
+    const val DEV                       = "dev"
+    const val STG                       = "stg"
+    const val PROD                      = "prod"
 }
