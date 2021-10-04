@@ -64,8 +64,8 @@ android {
 dependencies {
 
     //Module
-    implementation(project(Dependencies.DATA))
-    implementation(project(Dependencies.COMMON))
+    api(project(Dependencies.DATA))
+    api(project(Dependencies.COMMON))
 
     //Kotlin
     implementation(Dependencies.KOTLIN_STD)
