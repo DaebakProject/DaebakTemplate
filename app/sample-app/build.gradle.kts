@@ -9,12 +9,60 @@ android {
     compileSdkVersion(Configs.COMPILE_SDK)
     buildToolsVersion(Configs.BUILD_TOOLS)
 
+    signingConfigs {
+        create(Configs.RELEASE) { // 각 앱에 맞게 수정
+            storeFile = file("/")
+            storePassword = (System.getenv("STORE_PASSWORD"))
+            keyAlias = (System.getenv("KEY_ALIAS"))
+            keyPassword = (System.getenv("KEY_PASSWORD"))
+        }
+    }
+
     defaultConfig {
         applicationId = Configs.APPLICATION_ID
         minSdkVersion(Configs.MIN_SDK)
         targetSdkVersion(Configs.TARGET_SDK)
         versionCode = Configs.VERSION_CODE
         versionName = Configs.VERSION_NAME
+    }
+
+    buildTypes {
+        getByName(Configs.RELEASE) {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            debuggable(false)
+            signingConfig = signingConfigs.getByName(Configs.RELEASE)
+        }
+
+        getByName(Configs.DEBUG) {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+    }
+
+    flavorDimensions(Configs.FLAVOR)
+
+    productFlavors {
+        create(Configs.DEV) {
+            dimension(Configs.FLAVOR)
+            applicationIdSuffix(".${Configs.DEV}")
+
+            buildConfigField("boolean", "DEV", true.toString())
+            buildConfigField("boolean", "STG", false.toString())
+        }
+        create(Configs.STG) {
+            dimension(Configs.FLAVOR)
+            applicationIdSuffix(".${Configs.STG}")
+
+            buildConfigField("boolean", "DEV", false.toString())
+            buildConfigField("boolean", "STG", true.toString())
+        }
+        create(Configs.PROD) {
+            dimension(Configs.FLAVOR)
+
+            buildConfigField("boolean", "DEV", false.toString())
+            buildConfigField("boolean", "STG", false.toString())
+        }
     }
 
     compileOptions {
