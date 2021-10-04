@@ -4,10 +4,12 @@ import android.content.Context
 import com.daebak.data.InAppDeepLink
 import com.daebak.template.R
 import com.daebak.template.deeplink.DeepLinkIntent
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
 /**
  * DeepLink 를 보내는 부분 */
-class InAppDeepLinkImpl(private val context: Context): InAppDeepLink {
+class InAppDeepLinkImpl @Inject constructor(@ApplicationContext private val context: Context): InAppDeepLink {
     companion object {
         const val HOSTNAME = "in-app"
 
