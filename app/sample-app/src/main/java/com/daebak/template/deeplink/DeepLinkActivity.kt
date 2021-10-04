@@ -18,8 +18,6 @@ class DeepLinkActivity: BaseActivity(), NonUiActivity {
 
     override fun registerViewModels(): List<BaseViewModel> = emptyList()
 
-    override fun observeViewModel() { /** do nothing */ }
-
     private fun parseUri(intent: Intent) {
         val uri = intent.data
 

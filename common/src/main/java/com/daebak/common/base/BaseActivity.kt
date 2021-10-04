@@ -18,5 +18,5 @@ abstract class BaseActivity: AppCompatActivity() {
         }
     }
 
-    abstract fun observeViewModel()
+    open fun observeViewModel() {}
 }
